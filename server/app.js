@@ -32,9 +32,9 @@ app.get('/api/credentials', function(req, res){
 });
 
 //Route to signin
-app.post('/api/signin', function(req, res){
+app.get('/api/signin', function(req, res){
     var Name = req.body;
-    credentials.addcredentials(Name, function(err, ame){
+    credentials.signin(Name, function(err, ame){
         if(err){
             throw err;
         }

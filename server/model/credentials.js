@@ -23,6 +23,10 @@ module.exports.getcredentials = function(callback, limit){
     credentials.find(callback).limit(limit);
 }
 
+module.exports.signin = function(callback, limit){
+    credentials.find(callback).limit(limit);
+}
+
 //Add Data
 module.exports.addcredentials = function(Name, callback){
     credentials.create(Name, callback);
