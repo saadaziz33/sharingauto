@@ -22,23 +22,12 @@ app.get('/', function(req, res){
 });
 
 //Route to get data from Credentials
-app.get('/api/credentials', function(req, res){
-    credentials.getcredentials(function(err, credentials){
+app.get('/api/signin', function(req, res){
+    credentials.signin(function(err, credentials){
         if(err){
             throw err;
         }
         res.json(credentials);
-    });
-});
-
-//Route to signin
-app.get('/api/signin', function(req, res){
-    var Name = req.body;
-    credentials.signin(Name, function(err, ame){
-        if(err){
-            throw err;
-        }
-        res.json(ame);
     });
 });
 
