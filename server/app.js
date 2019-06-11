@@ -31,8 +31,19 @@ app.get('/api/credentials', function(req, res){
     });
 });
 
-//Route to Add data from Credentials
-app.post('/api/credentials', function(req, res){
+//Route to signin
+app.post('/api/signin', function(req, res){
+    var Name = req.body;
+    credentials.addcredentials(Name, function(err, ame){
+        if(err){
+            throw err;
+        }
+        res.json(ame);
+    });
+});
+
+//Route to signup
+app.post('/api/signup', function(req, res){
     var Name = req.body;
     credentials.addcredentials(Name, function(err, ame){
         if(err){
