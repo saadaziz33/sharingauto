@@ -4,15 +4,15 @@ var credentialschema = mongoose.Schema({
    
     Name: {
         type: String,
-        required: true
+        required: false
     },
     Email: {
         type: String,
-        required: true
+        required: false
     },
     Password: {
         type: String,
-        required: true
+        required: false
     }
 }, {versionKey:false});
 
