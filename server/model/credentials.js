@@ -1,15 +1,16 @@
 var mongoose = require('mongoose');
 
 var credentialschema = mongoose.Schema({
+   
     Name: {
         type: String,
         required: true
     },
-    Age: {
-        type: Number,
+    Email: {
+        type: String,
         required: true
     },
-    Email: {
+    Password: {
         type: String,
         required: true
     }
@@ -32,8 +33,8 @@ module.exports.updatecredentials = function(_id, atri, options, callback){
     var query = {_id: _id};
     var update = {
         Name: atri.Name,
-        Age: atri.Age,
-        Email: atri.Email
+        Email: atri.Email,
+        Password: atri.Password
     }
     credentials.findOneAndUpdate(query, update, options, callback);
 }
